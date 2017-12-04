@@ -1,0 +1,368 @@
+header {
+	background: grey;
+
+	.logo {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		top: 20px;
+
+		@media screen and (max-width: 360px) {
+			left: 42%;
+		}
+
+		@include tab() {
+			top: 10px;
+		}
+
+		@include mobile() {
+			top: 6px;
+		}
+
+		a {
+			color: #efe9e9;
+	    font-size: 40px;
+	    text-decoration: none;
+
+	    @include tab() {
+				font-size: 30px;
+		  }
+
+		  @include mobile() {
+		  	font-size: 26px;
+		  }
+		}
+	}
+	.hamburgar {
+		background: #000;
+		padding: 14px 38px;
+		cursor: pointer;
+
+		@include tab() {
+			padding: 4px 28px;
+		}
+
+		@include mobile() {
+			padding: 2px 22px;
+		}
+
+		&:hover span:first-child {
+			transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			transition: all 0.6s;
+			-webkit-transition: all 0.6s;
+			-moz-transition: all 0.6s;
+		}
+
+		&:hover span:nth-child(3) {
+			transform: rotate(45deg);
+			transition: all 0.6s;
+			-webkit-transform: rotate(45deg);
+			-webkit-transition: all 0.6s;
+			-moz-transform: rotate(45deg);
+			-moz-transition: all 0.6s;
+		}
+
+
+		span {
+			width: 12px;
+			height: 12px;
+			margin: 6px 0;
+
+			@include mobile() {
+				margin: 4px 0;
+			}
+
+			@include tab() {
+				width: 8px;
+				height: 8px;				
+			}
+
+			@include mobile() {
+				width: 7px;
+				height: 7px;				
+			}
+		}
+
+		span:first-child {
+			display: block;
+			background: yellow;
+			transform: rotate(45deg);
+			transition: all 0.6s;
+			-webkit-transform: rotate(45deg);
+			-webkit-transition: all 0.6s;
+			-moz-transform: rotate(45deg);
+			-moz-transition: all 0.6s;
+		}
+
+		span:nth-child(2) {
+			display: block;
+			background: blue;
+			border-radius: 50%;
+		}
+
+		span:nth-child(3) {
+			display: block;
+			background: green;
+			transform: rotate(0deg);
+			transition: all 0.6s;
+			-webkit-transform: rotate(0deg);
+			-webkit-transition: all 0.6s;
+			-moz-transform: rotate(0deg);
+			-moz-transition: all 0.6s;
+		}
+	}
+
+	.header-left {
+		float: left;
+
+		nav {
+			ul {
+				position: absolute;
+		    width: 100%;
+		    padding: 35px 0px;
+		    background: #000;
+		    display: none;
+		    z-index: 1;
+
+		    .has-child {
+		    	position: relative;
+		    	  &:before {
+					    content: ' ';
+					    width: 70px;
+					    height: 2px;
+					    background: #fff;
+					    position: absolute;
+					    top: 42px;
+					    left: -60px;
+					    z-index: 9;
+					    opacity: 0;
+					    transition: all 0.6s;
+					    -webkit-transition: all 0.6s;
+					    -moz-transition: all 0.6s;
+		    	  }
+
+		    	  &:hover:before {
+		    	  	left: 0;
+		    	  	opacity: 1;
+		    	  	transition: all 1s;
+		    	  	-webkit-transition: all 1s;
+		    	  	-moz-transition: all 1s;
+		    	  }
+
+					ul {
+						display: none;
+						position: relative;
+						padding: 0px;
+						overflow: hidden;
+						padding: 25px 0;
+						margin-left: -10px;
+
+						li {
+							float: left;
+							padding: 0;
+							margin: 0 10px;
+							opacity: 1;
+
+							a {
+								color: grey;
+								font-size: 22px;
+								margin-bottom: 20px;
+							}
+
+							@include tab() {
+								float: none;
+								display: block;
+								margin: 10px 0;
+							}
+						}
+					}
+
+					.has-grand-child {
+						position: relative;
+		    	  &:before {
+					    content: ' ';
+					    width: 70px;
+					    height: 2px;
+					    background: grey;
+					    position: absolute;
+					    top: 32px;
+					    left: -60px;
+					    z-index: 9;
+					    opacity: 0;
+					    transition: all 0.6s;
+					    -webkit-transition: all 0.6s;
+					    -moz-transition: all 0.6s;
+		    	  }
+
+		    	  &:hover:before {
+		    	  	left: 0;
+		    	  	opacity: 1;
+		    	  	transition: all 1s;
+		    	  	-webkit-transition: all 1s;
+		    	  	-moz-transition: all 1s;
+		    	  }
+					 
+					 ul {
+						display: none;
+						position: relative;
+						padding: 0px;
+						overflow: hidden;
+						/*padding: 15px 0;*/
+						margin-left: 0px;
+
+						li {
+							float: none;
+							display: block;
+							width: 100%;
+							padding: 0;
+							margin: 10px 0 0;
+							opacity: 1;
+
+							&:first-child {margin-top: 25px;}
+
+							a {
+								color: grey;
+								font-size: 18px;
+								margin: 0;
+							}
+						}
+					}						
+					}
+		   }
+
+		  li a {
+				font-size: 32px;
+				text-decoration: none;
+		  }  
+
+		  li {
+		  	margin: 12px 80px;
+		  	opacity: 0;
+		  }
+
+		  li:nth-child(3) a {
+				color: green;
+			}
+
+			li:nth-child(2) a {
+        color: blue;
+			}
+
+			li:nth-child(1) a {
+				color: yellow;
+			}
+			}
+		}
+	}
+
+	.header-right {
+		float: right;
+
+		ul {
+
+			li {
+				float: left;
+				list-style: none;
+				padding: 35px;
+				cursor: pointer;
+
+				@include tab() {
+					padding: 20px;
+				}
+
+				@include mobile() {
+					padding: 12px;
+				}
+			}
+
+			li:nth-child(3) {
+				background: yellow;
+			}
+
+			li:nth-child(2) {
+        background: blue;
+			}
+
+			li:nth-child(1) {
+				background: green;
+			}
+		}
+
+		.search-wrapp {
+			display: none;
+			position: absolute;
+			background: green;
+			width: 100%;
+			left: 0;
+			top: 85px;
+			z-index: 9;
+
+			@include tab() {top: 58px;}
+
+			@include mobile() {top: 41px;}
+
+			form {
+				padding: 50px 70px;
+
+				@include tab() {
+					padding: 50px 30px;
+				}
+			}
+
+			label {
+				font-size: 40px;
+				color: #fff;
+				@include tab(){font-size: 30px;}
+			}
+
+			input {
+				border: 0px solid;
+				width: 100%;
+				background: green;
+				outline: none;
+				color: #fff;
+				font-size: 20px;
+			}
+		}
+	}
+
+	.text-animate li.odd {
+		@include animation(text-odd 1.6s 0s 1);
+		opacity: 1 !important;
+	}
+
+	@keyframes text-odd {
+		0% {
+     position: relative;
+     bottom: 100px;
+     opacity: 0;
+		}
+
+		100% {
+     position: relative;
+     bottom: 0px;
+     opacity: 1;
+		}
+	}
+
+	.text-animate li.even {
+		@include animation(text-even 1.6s 0s 1);
+		opacity: 1 !important;
+	}
+
+	@keyframes text-even {
+		0% {
+     position: relative;
+     bottom: 100px;
+     opacity: 0;
+		}
+
+		100% {
+     position: relative;
+     bottom: 0px;
+     opacity: 1;
+		}
+	}
+}

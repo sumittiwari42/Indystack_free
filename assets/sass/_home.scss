@@ -1,0 +1,176 @@
+.main-wrapper {
+	width: 94%;
+	margin: 0 auto;
+	
+	.filter-list {
+		width: 32%;
+		float: right;
+		background: #000;
+		cursor: pointer;
+		margin: 30px 0;
+		position: relative;
+
+		@include mobile() {
+			width: 48%;
+		}
+
+		.filter-btn {
+	    background: #000;
+	    color: #fff;
+	    width: 100%;
+	    display: block;
+	    font-size: 20px;
+
+	    .btn-cont {
+				position: relative;
+				display: block;
+				padding: 15px 22px;
+
+				@include tab() {
+					padding: 10px 22px;
+				}
+
+			&:after {
+				content: ' ';
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				background: yellow; 
+				transform: rotate(0deg);
+				transition: all 0.6s;
+				-webkit-transform: rotate(0deg);
+				-webkit-transition: all 0.6s;
+				-moz-transform: rotate(0deg);
+				-moz-transition: all 0.6s;
+
+				@include tab() {
+					top: 17px;
+				}
+			}
+
+			&:hover:after {
+				transform: rotate(45deg);
+				transition: all 0.6s;	
+				-webkit-transform: rotate(45deg);
+				-webkit-transition: all 0.6s;				
+				-moz-transform: rotate(45deg);
+				-moz-transition: all 0.6s;	
+			}
+		 }
+		}	
+
+		.filter-content {
+			/*padding-bottom: 15px;*/
+			display: none;
+			cursor: pointer;
+			background: #000;
+			position: absolute;
+			width: 100%;
+
+			li {
+				list-style: none;
+				margin: 0px 0;
+				padding: 8px 22px;
+				position: relative;
+				transition: all 0.8s;
+				-webkit-transition: all 0.8s;
+				-moz-transition: all 0.8s;
+
+				&:hover {
+					padding: 8px 37px;
+					transition: all 0.8s;
+					-webkit-transition: all 0.8s;
+					-moz-transition: all 0.8s;
+				}
+
+				&:after {
+					content: ' ';
+					width: 15px;
+					height: 2px;
+					background: #fff;
+					top: 16px;
+					left: 0px;
+					position: absolute;
+					transition: all 0.8s;
+					-webkit-transition: all 0.8s;
+					-moz-transition: all 0.8s;
+				}
+
+				&:hover:after {
+					width: 30px;
+					transition: all 0.8s;
+					-webkit-transition: all 0.8s;
+					-moz-transition: all 0.8s;
+				}
+
+				a {
+					text-decoration: none;
+					font-size: 18px;
+					text-transform: capitalize;
+					color: #fff;
+				}
+			}
+		}
+	}	
+
+	.product-list {
+		.product {
+			width: 32%;
+			float: left;
+			margin-right: 2%;
+			margin-bottom: 15px;
+
+			&:nth-child(3n+3) {
+				margin-right: 0;
+				@include tab() { 
+					margin-right: 4%;
+				}
+			}
+
+			&:nth-child(2n+2) {
+				@include tab() { 
+					margin-right: 0;
+				}
+			}
+
+			@include tab() {
+				width: 48%;
+				margin-right: 4%;
+			}
+
+			.product-img {
+				max-height: 350px;
+				overflow: hidden;
+				width: 100%;
+
+				img {
+					width: 100%;
+				}
+			}
+      
+      .product-content {margin: 15px 0;}
+
+      p {
+      	font-size: 20px;
+      	@include mobile() {
+      		font-size: 13px;
+      	}
+      }
+			
+			.name {
+				float: left;
+
+				.brand {
+					color: grey;
+				}
+			}
+
+			.money {
+				float: right;
+			}
+		}
+	}
+
+}
